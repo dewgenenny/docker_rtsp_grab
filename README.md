@@ -6,9 +6,13 @@ Created this image as some cheap chinese cameras don't support creating a snapsh
 You need to call this image with the URL environment variable set to the URL of the camera you want it to connect to. Once
 you've got it running, you'll be able to see the snapshot at http://your-server-ip:port/snapshot.jpg
 
-Example:
+Examples:
 
-First, build the docker image:
+Using the image from DockerHub:
+
+docker run --rm --name rtsp_grab -e URL=http://url-of-your-camera:554/live/ch0 -p 8844:80 dewgenenny/docker_rtsp_grab
+
+Building the docker image yourself:
 
 sudo docker build -t rtsp_grab .
 
